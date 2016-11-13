@@ -3,8 +3,7 @@ title: "Yahoo Stock Volatility"
 author: "Vishi Cline"
 date: "November 13, 2016"
 output: html_document
-keep_md:
-      TRUE
+keep_md:  TRUE  
 ---
 
 ```{r setup, include=FALSE}
