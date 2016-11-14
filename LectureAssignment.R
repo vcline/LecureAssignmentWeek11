@@ -1,7 +1,7 @@
 ###############################################################################
 #Author:  Vishi Cline
 #Created Date:  11/13/2016
-#Description:  Downloads stock data for yahoo, 
+#Description:  Downloads stock data for TC Pipelines, 
 #               calculates log returns, 
 #               calculates volatility measure
 #               calculates volatility measure with a continuous lookback window
@@ -12,8 +12,8 @@
 install.packages("tseries")
 library(tseries)
 
-#Download stock data for yahoo
-SNPdata<-get.hist.quote(instrument = 'SPY',quote="Close")
+#Download stock data for TC Pipelines
+SNPdata<-get.hist.quote(instrument = 'TCP',quote="Close")
 length(SNPdata)
 
 #Calculate log return

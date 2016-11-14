@@ -16,16 +16,16 @@ knitr::opts_chunk$set(echo = TRUE)
 # Download Data
 
 ```r
-SNPdata<-get.hist.quote(instrument = 'SPY',quote="Close")
+SNPdata<-get.hist.quote(instrument = 'TCP',quote="Close")
 ```
 
 ```
 ## Warning in download.file(url, destfile, method = method, quiet = quiet):
-## downloaded length 418196 != reported length 200
+## downloaded length 265492 != reported length 200
 ```
 
 ```
-## time series starts 1993-01-29
+## time series starts 1999-05-25
 ## time series ends   2016-11-11
 ```
 
@@ -34,7 +34,7 @@ length(SNPdata)
 ```
 
 ```
-## [1] 5993
+## [1] 4398
 ```
 
 # Calculate Log Returns
@@ -45,7 +45,7 @@ length(SNPret)
 ```
 
 ```
-## [1] 5992
+## [1] 4397
 ```
 
 # Calculate Volatility measure
@@ -56,7 +56,7 @@ SNPvol
 ```
 
 ```
-## [1] 18.68468
+## [1] 27.62422
 ```
 
 # Calculate volatility and a continuous lookback window using various decay factors.

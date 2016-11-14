@@ -19,7 +19,7 @@ library(tseries)
 
 # Download Data
 ```{r , echo=TRUE}
-SNPdata<-get.hist.quote(instrument = 'SPY',quote="Close")
+SNPdata<-get.hist.quote(instrument = 'TCP',quote="Close")
 length(SNPdata)
 ```
 
