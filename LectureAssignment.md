@@ -1,4 +1,4 @@
-# Yahoo Stock Volatility
+# TC Pipelines Stock Volatility
 Vishi Cline  
 November 13, 2016  
 
@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Download Data
-
+Download the data for stocks relating to TC Pilpelines.
 ```r
 SNPdata<-get.hist.quote(instrument = 'TCP',quote="Close")
 ```
@@ -38,7 +38,7 @@ length(SNPdata)
 ```
 
 # Calculate Log Returns
-
+We used log return as opposed to percent return because log returns are symmetric with respect to gains and losses.  They are also additive.
 ```r
 SNPret<-log(lag(SNPdata))-log(SNPdata)
 length(SNPret)
@@ -49,7 +49,7 @@ length(SNPret)
 ```
 
 # Calculate Volatility measure
-
+Get the running estimate of how much change has occured using sample standard deviation. 
 ```r
 SNPvol<-sd(SNPret) * sqrt(250)*100
 SNPvol
@@ -60,7 +60,7 @@ SNPvol
 ```
 
 # Calculate volatility and a continuous lookback window using various decay factors.
-
+The following function exponentially downweights the older data.  It calculates the variance as the weighted sum of squares of the previous returns and then takes the square root to estimate the volatility. 
 ```r
 Vol<-function(d,logrets){
   var=0
